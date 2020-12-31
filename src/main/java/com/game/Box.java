@@ -1,12 +1,9 @@
 package com.game;
 
 
-import com.sun.xml.internal.ws.util.StringUtils;
-
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Date;
 
 /**
  * @author HUAWEI
@@ -24,14 +21,14 @@ public class Box {
         this.previousHashValue = previousHashValue;
     }
 
+    public Box(int id) {
+        this.id = id;
+    }
 
     public boolean tryOpen(int mysteriousNumber) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         setMysteriousNumber(mysteriousNumber);
         calculateHashValue();
-        if (isOpen()) {
-            return true;
-        }
-        return false;
+        return isOpen();
     }
 
     public boolean isOpen() {
@@ -46,17 +43,22 @@ public class Box {
         setHashValue(sha256(hashString));
     }
 
+    public String getHashValue() {
+        return hashValue;
+    }
+
     public void setHashValue(String hashValue) {
         this.hashValue = hashValue;
     }
 
-    public String getHashValue() {
-        return hashValue;
+    public void setPreviousHashValue(String previousHashValue) {
+        this.previousHashValue = previousHashValue;
     }
 
     public void setMysteriousNumber(int mysteriousNumber) {
         this.mysteriousNumber = mysteriousNumber;
     }
+
 
     public static String sha256(String s) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         StringBuilder sb = new StringBuilder();

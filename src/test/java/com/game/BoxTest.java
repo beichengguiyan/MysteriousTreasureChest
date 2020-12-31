@@ -1,10 +1,8 @@
 package com.game;
 
 import org.junit.Test;
-
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
-
 import static org.junit.Assert.*;
 
 /**

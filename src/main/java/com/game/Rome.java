@@ -13,11 +13,17 @@ public class Rome {
 
     public Rome(Box[] boxs) {
         this.boxs = boxs;
+        this.mysteriousNumbers = new int[boxs.length];
     }
 
-    public void searchAllMysteriousNumbers() {
-        for (Box box : boxs
-        ) {
+    public void searchAllMysteriousNumbers() throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        for (int i = 0; i < boxs.length; i++) {
+            if (i == 0) {
+                mysteriousNumbers[i] = searchMysteriousNumber(boxs[i]);
+            } else {
+                boxs[i].setPreviousHashValue(boxs[i - 1].getHashValue());
+                mysteriousNumbers[i] = searchMysteriousNumber(boxs[i]);
+            }
 
         }
     }
