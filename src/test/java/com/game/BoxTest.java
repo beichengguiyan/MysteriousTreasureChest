@@ -18,7 +18,7 @@ public class BoxTest {
     @Test
     public void should_return_false_when_given_number_222() throws UnsupportedEncodingException, NoSuchAlgorithmException {
         //given
-        Box box = new Box(0, "0");
+        Box box = new Box(1, "0");
         int number = 222;
 
         //when

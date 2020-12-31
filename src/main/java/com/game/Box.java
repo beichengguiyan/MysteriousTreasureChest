@@ -34,7 +34,7 @@ public class Box {
     }
 
     public boolean isOpen() {
-        if (CHECK.equals(hashValue.substring(0, 5))) {
+        if (CHECK.equals(getHashValue().substring(0, 5))) {
             return true;
         }
         return false;
