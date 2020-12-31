@@ -12,16 +12,22 @@ public class Box {
     private int previousHashValue;
     private int mysteriousNumber;
 
-    public Box(int id, Date date, int hashValue, int previousHashValue, int mysteriousNumber) {
+    public Box(int id, int previousHashValue) {
         this.id = id;
-        this.date = date;
-        this.hashValue = hashValue;
         this.previousHashValue = previousHashValue;
-        this.mysteriousNumber = mysteriousNumber;
     }
 
-    public boolean isOpen() {
+
+    public boolean isOpen(int number) {
+
         return false;
     }
 
+    public void setDate(Date date) {
+        this.date = new Date();
+    }
+
+    public void setMysteriousNumber(int mysteriousNumber) {
+        this.mysteriousNumber = mysteriousNumber;
+    }
 }
