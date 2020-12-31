@@ -17,6 +17,7 @@ public class Box {
     private String previousHashValue;
     private int mysteriousNumber;
     public static final String CHECK = "00000";
+    public static final int MAX_CHECK_NUMBER = 5;
 
     public Box(int id, String previousHashValue) {
         this.id = id;
@@ -34,7 +35,7 @@ public class Box {
     }
 
     public boolean isOpen() {
-        if (CHECK.equals(getHashValue().substring(0, 5))) {
+        if (CHECK.equals(getHashValue().substring(0, MAX_CHECK_NUMBER))) {
             return true;
         }
         return false;

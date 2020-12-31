@@ -7,13 +7,16 @@ import java.security.NoSuchAlgorithmException;
 
 import static org.junit.Assert.*;
 
+/**
+ * @author HUAWEI
+ */
 public class BoxTest {
 
     /**
      * 测试构建box时，尝试开箱的操作
      * 如果: given 创建对象box和测试的神秘数字
      * 当:  when 调用创建对象的方法时
-     * 则:  then 品质依然为50
+     * 则:  then 返回false
      */
     @Test
     public void should_return_false_when_given_number_222() throws UnsupportedEncodingException, NoSuchAlgorithmException {
